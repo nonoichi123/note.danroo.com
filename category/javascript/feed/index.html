@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>JavaScript &#8211; rhino no note</title>
+	<atom:link href="http://note.danroo.com/category/javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>http://note.danroo.com/</link>
+	<description></description>
+	<lastBuildDate>Thu, 02 Apr 2020 00:40:15 +0000</lastBuildDate>
+	<language>ja</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+	<item>
+		<title>エラー「Expected property shorthand  object-shorthand」の対処方法</title>
+		<link>http://note.danroo.com/%e3%82%a8%e3%83%a9%e3%83%bc%e3%80%8cexpected-property-shorthand-object-shorthand%e3%80%8d%e3%81%ae%e5%af%be%e5%87%a6%e6%96%b9%e6%b3%95/</link>
+				<pubDate>Sat, 21 Mar 2020 15:46:36 +0000</pubDate>
+		<dc:creator><![CDATA[rhinonolike]]></dc:creator>
+				<category><![CDATA[JavaScript]]></category>
+
+		<guid isPermaLink="false">http://note.danroo.com/?p=9</guid>
+				<description><![CDATA[こちらのエラーの対処方法がわかったのでメモ。 error Expected property shorthand object-shorthand &#38;#x2716; 1 problem (1 error, 0 w...]]></description>
+								<content:encoded><![CDATA[<p><span id="more-9"></span></p>
+<p>こちらのエラーの対処方法がわかったのでメモ。</p>
+<pre><code class="language-javascript ">error  Expected property shorthand  object-shorthand
+</code></pre>
+<pre><code class="language-javascript ">&amp;#x2716; 1 problem (1 error, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+</code></pre>
+<p>このような記載をしていたら、エラーが出た。</p>
+<pre><code class="language-javascript ">return { area: area, prefecture: facility.prefecture, town: facility.address }
+</code></pre>
+<p>keyと値が同じだから、ダメなんだと変数名を変更していたのだが、<br />
+keyと値が同じなら、値を省略していいようで、省略したら、エラーが解消された。</p>
+<pre><code class="language-javascript ">return { area, prefecture: facility.prefecture, town: facility.address }
+</code></pre>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>
